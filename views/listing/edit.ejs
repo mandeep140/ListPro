@@ -1,0 +1,72 @@
+<% layout("/layout/boilerplate.ejs") %>
+<br>
+<div class="row">
+    <div class="col-8 offset-2">
+    <h2>Edit Post</h2>
+    <form  method="post" action="/listing/<%= post._id %>?_method=PUT" novalidate class="needs-validation">
+        <div class="mb-3">
+            <label for="title" class="form-lable">Title</label>
+            <input type="text" name="listing[title]" placeholder="Enter title" class="form-control" value="<%= post.title %>" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="description" class="form-lable">Description</label>
+            <textarea required type="text" name="listing[description]" placeholder="Enter description" class="form-control"><%= post.description %></textarea>
+        </div>
+
+        <div class="mb-3">
+            <label for="image" class="form-lable">Image</label>
+            <input required type="text" name="listing[image]" placeholder="Enter image link/URL" class="form-control" value="<%= post.image %>">
+        </div>
+        
+        <div class="row">
+        <div class="mb-3 col-md-4">
+            <label for="number" class="form-lable">Price in Rs</label>
+            <input required type="number" name="listing[price]" placeholder="Enter price" class="form-control" value="<%= post.price %>">
+        </div>
+
+        <div class="mb-3 col-md-8">
+            <label for="country" class="form-lable">Country</label>
+            <input required type="text" name="listing[country]" placeholder="Enter country" class="form-control" value="<%= post.country %>">
+        </div>
+        </div>
+
+        <div class="mb-3">
+            <label for="location" class="form-lable">Location</label>
+            <input required type="text" name="listing[location]" placeholder="Enter location" class="form-control" value="<%= post.location %>">
+        </div>
+        <br>
+        <button class="btn btn-dark mb-3">Edit Now</button>
+        <a href="/listing/<%= post._id%>" class="offset-2 btn btn-dark mb-3">Discard</a>
+    </form>
+</div>
+</div>
+
+
+
+
+
+<!-- 
+<% layout("/layout/boilerplate.ejs") %>
+<body>
+    <h2>edit post</h2>
+    <form  method="post" action="/listing/<%= post._id %>?_method=PUT">
+        <input type="text" name="listing[title]" value="<%= post.title %>">
+        <br>
+        <textarea type="text" name="listing[description]" value="<%= post.description %>"><%= post.description %></textarea>
+        <br>
+        <input type="text" name="listing[image]" value="<%= post.image %>">
+        <br>
+        <input type="number" name="listing[price]" value="<%= post.price %>">
+        <br>
+        <input type="text" name="listing[country]" value="<%= post.country %>">
+        <br>
+        <input type="text" name="listing[location]" value="<%= post.location %>">
+        <br>
+        
+        <button>Edit now</button>
+    </form>
+    <form action="/listing/<%= post.id %>" method="get">
+        <button>Go Back</button>
+    </form>
+</body> -->
